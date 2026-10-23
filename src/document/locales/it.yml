@@ -1,0 +1,60 @@
+it:
+  document:
+    module:
+      name: "Giustificativi"
+    permissions:
+      receipt:
+        read: "Vedere i giustificativi da gestire"
+        write: "Caricare, completare, collegare e registrare i giustificativi"
+    menu:
+      document_inbox: "Giustificativi"
+    sources:
+      photo: "Foto"
+      file: "File"
+      einvoice: "Fattura elettronica"
+    statuses:
+      to_process: "Da gestire"
+      attached: "Collegato"
+      discarded: "Scartato"
+    kinds:
+      invoice: "Fattura"
+      ticket: "Scontrino"
+      expense_report: "Nota spese"
+      other: "Altro"
+    errors:
+      receipt:
+        content:
+          empty: "Il file è vuoto."
+          too_large: "Il file supera %{max} MiB."
+          unsupported: "Formato non supportato: carichi una foto (JPEG, PNG, HEIC) o un PDF."
+        source:
+          invalid: "Origine sconosciuta: %{value}."
+        supplier_code:
+          unknown: "Nessuna scheda ha il codice %{value}."
+        supplier_name:
+          too_long: "Il fornitore non può superare %{max} caratteri."
+        amount:
+          negative: "L'importo non può essere negativo."
+          too_precise: "L'importo non può avere più di %{max} decimali."
+          too_large: "L'importo è troppo grande."
+        currency_code:
+          invalid: "Codice valuta non valido: %{value}."
+        kind:
+          invalid: "Tipo sconosciuto: %{value}."
+        note:
+          too_long: "La nota non può superare %{max} caratteri."
+        reference:
+          too_long: "Il riferimento non può superare %{max} caratteri."
+        external_ref:
+          blank: "L'identificativo della fattura presso la piattaforma è obbligatorio."
+          too_long: "L'identificativo della fattura presso la piattaforma non può superare %{max} caratteri."
+        status:
+          not_to_process: "Questo giustificativo non è più da gestire."
+          already_to_process: "Questo giustificativo è già da gestire."
+        entry_id:
+          unknown: "Registrazione non trovata."
+          cancelled: "La registrazione %{value} è annullata: colleghi il giustificativo a una registrazione valida."
+        invoice_id:
+          unknown: "Fattura non trovata."
+        einvoice: "Fattura ricevuta tramite la piattaforma accreditata: la gestisca dalla schermata «Fatture elettroniche ricevute»."
+        module_inactive: "Il modulo %{module} non è attivo."

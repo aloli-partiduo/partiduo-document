@@ -78,7 +78,7 @@ src/
     ├── migrations/
     ├── services/              # règles, rendu des vignettes, abonnements (interne)
     ├── api/                   # contrat public Document::Api
-    └── locales/               # fr, en, nl
+    └── locales/               # fr, en, nl, de, es, it, pt
 ui/
 └── bulma/                     # interface pour partiduo-ui-bulma (application « document_ui »)
     ├── bulma.cr               # routes sous /ext/DOCUMENT/, compteur du menu

@@ -251,9 +251,15 @@ describe "Boîte « Justificatifs à traiter » sous /ext/DOCUMENT/ (ADR-005 D8)
     browser.post("/ext/DOCUMENT/#{receipt.id}/discard").status.should eq(403)
   end
 
-  it "se traduit selon la langue de l'utilisateur" do
+  it "se traduit dans chaque langue de l'interface" do
     browser = signed_in
-    {"en" => "Take a photo of a receipt", "nl" => "Bewijsstuk fotograferen", "fr" => "Photographier un justificatif"}.each do |locale, label|
+    labels = {
+      "en" => "Take a photo of a receipt", "nl" => "Bewijsstuk fotograferen", "de" => "Nachweis fotografieren",
+      "es" => "Fotografiar un justificante", "it" => "Fotografa un giustificativo", "pt" => "Fotografar um comprovativo",
+      "fr" => "Photographier un justificatif",
+    }
+    labels.keys.to_set.should eq(Partiduo::LOCALES.to_set)
+    labels.each do |locale, label|
       browser.post("/language", {"locale" => locale, "next" => "/ext/DOCUMENT/"})
       browser.get("/ext/DOCUMENT/").html.should contain(label)
     end

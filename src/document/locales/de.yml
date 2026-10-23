@@ -1,0 +1,60 @@
+de:
+  document:
+    module:
+      name: "Nachweise"
+    permissions:
+      receipt:
+        read: "Zu bearbeitende Nachweise einsehen"
+        write: "Nachweise hochladen, ergänzen, zuordnen und erfassen"
+    menu:
+      document_inbox: "Nachweise"
+    sources:
+      photo: "Foto"
+      file: "Datei"
+      einvoice: "E-Rechnung"
+    statuses:
+      to_process: "Zu bearbeiten"
+      attached: "Zugeordnet"
+      discarded: "Verworfen"
+    kinds:
+      invoice: "Rechnung"
+      ticket: "Kassenbon"
+      expense_report: "Spesenabrechnung"
+      other: "Sonstiges"
+    errors:
+      receipt:
+        content:
+          empty: "Die Datei ist leer."
+          too_large: "Die Datei überschreitet %{max} MiB."
+          unsupported: "Format nicht unterstützt: Laden Sie ein Foto (JPEG, PNG, HEIC) oder ein PDF hoch."
+        source:
+          invalid: "Unbekannte Quelle: %{value}."
+        supplier_code:
+          unknown: "Kein Stammsatz trägt den Code %{value}."
+        supplier_name:
+          too_long: "Der Lieferant darf höchstens %{max} Zeichen lang sein."
+        amount:
+          negative: "Der Betrag darf nicht negativ sein."
+          too_precise: "Der Betrag darf höchstens %{max} Nachkommastellen haben."
+          too_large: "Der Betrag ist zu groß."
+        currency_code:
+          invalid: "Ungültiger Währungscode: %{value}."
+        kind:
+          invalid: "Unbekannte Art: %{value}."
+        note:
+          too_long: "Die Notiz darf höchstens %{max} Zeichen lang sein."
+        reference:
+          too_long: "Die Referenz darf höchstens %{max} Zeichen lang sein."
+        external_ref:
+          blank: "Die Kennung der Rechnung bei der Plattform ist erforderlich."
+          too_long: "Die Kennung der Rechnung bei der Plattform darf höchstens %{max} Zeichen lang sein."
+        status:
+          not_to_process: "Dieser Nachweis ist nicht mehr zu bearbeiten."
+          already_to_process: "Dieser Nachweis ist bereits zu bearbeiten."
+        entry_id:
+          unknown: "Buchung nicht gefunden."
+          cancelled: "Die Buchung %{value} ist storniert: Ordnen Sie den Nachweis einer gültigen Buchung zu."
+        invoice_id:
+          unknown: "Rechnung nicht gefunden."
+        einvoice: "Über die zugelassene Plattform empfangene Rechnung: Bearbeiten Sie sie im Bildschirm „Empfangene E-Rechnungen“."
+        module_inactive: "Das Modul %{module} ist nicht aktiv."

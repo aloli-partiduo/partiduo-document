@@ -26,7 +26,7 @@ describe "Extension DOCUMENT : manifeste et activation (ADR-003 D2, D4 ; ADR-005
     Partiduo::Modules.dependency_errors(manifest, Set{Document::CODE}).should be_empty
   end
 
-  it "traduit son nom, ses permissions et son menu en fr, en et nl" do
+  it "traduit son nom, ses permissions et son menu dans chaque langue de l'interface" do
     manifest = Partiduo::Modules[Document::CODE]
     keys = [manifest.name] + manifest.permission_entries.map(&.label) + manifest.menus.map(&.label)
     Partiduo::LOCALES.each do |locale|

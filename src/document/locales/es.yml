@@ -1,0 +1,60 @@
+es:
+  document:
+    module:
+      name: "Justificantes"
+    permissions:
+      receipt:
+        read: "Ver los justificantes pendientes"
+        write: "Depositar, completar, vincular y registrar los justificantes"
+    menu:
+      document_inbox: "Justificantes"
+    sources:
+      photo: "Foto"
+      file: "Archivo"
+      einvoice: "Factura electrónica"
+    statuses:
+      to_process: "Pendiente"
+      attached: "Vinculado"
+      discarded: "Descartado"
+    kinds:
+      invoice: "Factura"
+      ticket: "Tique de caja"
+      expense_report: "Nota de gastos"
+      other: "Otro"
+    errors:
+      receipt:
+        content:
+          empty: "El archivo está vacío."
+          too_large: "El archivo supera %{max} MiB."
+          unsupported: "Formato no admitido: deposite una foto (JPEG, PNG, HEIC) o un PDF."
+        source:
+          invalid: "Origen desconocido: %{value}."
+        supplier_code:
+          unknown: "Ninguna ficha tiene el código %{value}."
+        supplier_name:
+          too_long: "El proveedor no puede superar los %{max} caracteres."
+        amount:
+          negative: "El importe no puede ser negativo."
+          too_precise: "El importe no puede tener más de %{max} decimales."
+          too_large: "El importe es demasiado grande."
+        currency_code:
+          invalid: "Código de moneda no válido: %{value}."
+        kind:
+          invalid: "Tipo desconocido: %{value}."
+        note:
+          too_long: "La nota no puede superar los %{max} caracteres."
+        reference:
+          too_long: "La referencia no puede superar los %{max} caracteres."
+        external_ref:
+          blank: "El identificador de la factura en la plataforma es obligatorio."
+          too_long: "El identificador de la factura en la plataforma no puede superar los %{max} caracteres."
+        status:
+          not_to_process: "Este justificante ya no está pendiente."
+          already_to_process: "Este justificante ya está pendiente."
+        entry_id:
+          unknown: "Asiento no encontrado."
+          cancelled: "El asiento %{value} está anulado: vincule el justificante a un asiento vigente."
+        invoice_id:
+          unknown: "Factura no encontrada."
+        einvoice: "Factura recibida a través de la plataforma autorizada: tramítela desde la pantalla «Facturas electrónicas recibidas»."
+        module_inactive: "El módulo %{module} no está activo."

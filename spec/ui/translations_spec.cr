@@ -4,19 +4,19 @@ require "../spec_helper"
 
 # Traductions des écrans de l'extension (ADR-005 D7) : chaque route de
 # `/ext/DOCUMENT/` servie en `GET` (liste tirée du routeur de Marten),
-# obtenue en fr, en et nl par un administrateur, sur une boîte variée :
-# photo à traiter (fournisseur reconnu), PDF sans compléments, facture
-# reçue de la plateforme (données structurées), justificatif écarté et
-# justificatif rattaché à son écriture. Contrôle de l'interface
-# (`PartiduoUi::Translations`) : ni marqueur de traduction absente, ni clé
-# brute, ni interpolation non résolue, et toute route atteinte par les
-# liens des pages.
+# obtenue dans chaque langue de l'interface par un administrateur, sur une
+# boîte variée : photo à traiter (fournisseur reconnu), PDF sans
+# compléments, facture reçue de la plateforme (données structurées),
+# justificatif écarté et justificatif rattaché à son écriture. Contrôle de
+# l'interface (`PartiduoUi::Translations`) : ni marqueur de traduction
+# absente, ni clé brute, ni interpolation non résolue, et toute route
+# atteinte par les liens des pages.
 
 private alias Api = Document::Api
 private alias S = Document::SpecSupport
 private alias Books = PartiduoUi::Books
 
-describe "Traductions des écrans DOCUMENT (fr, en, nl)" do
+describe "Traductions des écrans DOCUMENT (chaque langue de l'interface)" do
   it "rend chaque écran dans chaque langue, sans clé absente, brute ni interpolation non résolue" do
     browser = Books.admin
     S.activate
@@ -37,7 +37,7 @@ describe "Traductions des écrans DOCUMENT (fr, en, nl)" do
                                                         "line-0-vat_rate" => "NOR", "invoice_number" => "FB-4472"}).status.should eq(302)
 
     explorer = PartiduoUi::Translations::Explorer.new(&.name.starts_with?("document:"))
-    # Les requêtes laissent active la dernière langue obtenue (nl) : la
+    # Les requêtes laissent active la dernière langue obtenue : la
     # langue d'avant est rendue aux exemples suivants.
     locale = I18n.locale
     begin

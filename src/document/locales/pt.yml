@@ -1,0 +1,60 @@
+pt:
+  document:
+    module:
+      name: "Comprovativos"
+    permissions:
+      receipt:
+        read: "Ver os comprovativos por tratar"
+        write: "Carregar, completar, associar e lançar os comprovativos"
+    menu:
+      document_inbox: "Comprovativos"
+    sources:
+      photo: "Fotografia"
+      file: "Ficheiro"
+      einvoice: "Fatura eletrónica"
+    statuses:
+      to_process: "Por tratar"
+      attached: "Associado"
+      discarded: "Descartado"
+    kinds:
+      invoice: "Fatura"
+      ticket: "Talão de caixa"
+      expense_report: "Nota de despesas"
+      other: "Outro"
+    errors:
+      receipt:
+        content:
+          empty: "O ficheiro está vazio."
+          too_large: "O ficheiro excede %{max} MiB."
+          unsupported: "Formato não suportado: carregue uma fotografia (JPEG, PNG, HEIC) ou um PDF."
+        source:
+          invalid: "Origem desconhecida: %{value}."
+        supplier_code:
+          unknown: "Nenhuma ficha tem o código %{value}."
+        supplier_name:
+          too_long: "O fornecedor não pode exceder %{max} caracteres."
+        amount:
+          negative: "O montante não pode ser negativo."
+          too_precise: "O montante não pode ter mais de %{max} casas decimais."
+          too_large: "O montante é demasiado elevado."
+        currency_code:
+          invalid: "Código de moeda inválido: %{value}."
+        kind:
+          invalid: "Tipo desconhecido: %{value}."
+        note:
+          too_long: "A nota não pode exceder %{max} caracteres."
+        reference:
+          too_long: "A referência não pode exceder %{max} caracteres."
+        external_ref:
+          blank: "O identificador da fatura na plataforma é obrigatório."
+          too_long: "O identificador da fatura na plataforma não pode exceder %{max} caracteres."
+        status:
+          not_to_process: "Este comprovativo já não está por tratar."
+          already_to_process: "Este comprovativo já está por tratar."
+        entry_id:
+          unknown: "Lançamento não encontrado."
+          cancelled: "O lançamento %{value} está anulado: associe o comprovativo a um lançamento em vigor."
+        invoice_id:
+          unknown: "Fatura não encontrada."
+        einvoice: "Fatura recebida através da plataforma acreditada: trate-a a partir do ecrã «Faturas eletrónicas recebidas»."
+        module_inactive: "O módulo %{module} não está ativo."
