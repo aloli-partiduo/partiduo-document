@@ -81,7 +81,7 @@ pt:
         invoice: "Fatura"
     entry:
       invoice_number: "N.º da fatura do fornecedor"
-      title: "Lançar"
+      title: "Lançamento"
       photo_note: "A imagem permanece associada ao lançamento. O original em papel deve ser conservado."
       supplier_hint: "Fornecedor indicado no comprovativo: %{supplier}. Escolha a sua ficha."
       split: "Repartir o montante com IVA do comprovativo (%{amount}) à taxa"

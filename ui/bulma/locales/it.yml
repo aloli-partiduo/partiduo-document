@@ -81,7 +81,7 @@ it:
         invoice: "Fattura"
     entry:
       invoice_number: "N. fattura del fornitore"
-      title: "Registra"
+      title: "Inserimento della registrazione"
       photo_note: "L'immagine resta collegata alla registrazione. L'originale cartaceo va conservato."
       supplier_hint: "Fornitore indicato sul giustificativo: %{supplier}. Scelga la sua scheda."
       split: "Ripartisci l'importo IVA inclusa del giustificativo (%{amount}) all'aliquota"
